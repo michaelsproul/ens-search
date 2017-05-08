@@ -14,7 +14,7 @@ cat
 party
 ```
 
-...running the tool yields the top names which are 2-word permutations of this list:
+...running the tool yields the next available names which are 2-word permutations of this list:
 
 ```
 $ ./run.sh example.txt 2
