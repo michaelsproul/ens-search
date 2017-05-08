@@ -35,7 +35,7 @@ getAllowedTime name = posixSecondsToUTCTime $ fromInteger ts
     where ts = registryStarted + shiftR (launchLength * shiftR nameInt 128) 128
           nameInt = digestToInteger (sha3 name)
 
--- | Treat the bytes of a digest as a little-endian Integer.
+-- | Treat the bytes of a digest as a big-endian Integer.
 digestToInteger :: Digest a -> Integer
 digestToInteger digest = sum $ map convert (enumerate bytes)
     where convert (i, v) = shiftL (toInteger v) (8 * (len - 1 - i))
